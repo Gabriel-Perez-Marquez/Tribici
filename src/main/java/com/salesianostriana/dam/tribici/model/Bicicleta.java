@@ -1,0 +1,28 @@
+package com.salesianostriana.dam.tribici.model;
+
+import jakarta.persistence.*;
+import lombok.*;
+
+import java.util.ArrayList;
+import java.util.List;
+
+@Entity
+@NoArgsConstructor
+@AllArgsConstructor
+@Getter
+@Setter
+@ToString
+@Builder
+public class Bicicleta {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    private String marca;
+    private String modelo;
+    private Estado estado;
+    @ManyToOne
+    private Estacion estacion;
+    @OneToMany(mappedBy = "bicicleta")
+    private List<Uso> usos = new ArrayList<>();
+}
