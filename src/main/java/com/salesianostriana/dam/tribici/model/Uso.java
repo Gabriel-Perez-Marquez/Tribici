@@ -19,11 +19,13 @@ public class Uso {
     private LocalDate fechaFin;
     private double coste;
     @ManyToOne
+    @JoinColumn(name = "bicicleta_id")
     private Estacion estacion;
     @ManyToOne
+    @JoinColumn(name = "bicicleta_id")
     private Usuario usuario;
     @ManyToOne
-    @JoinColumn
+    @JoinColumn(name = "bicicleta_id")
     private Bicicleta bicicleta;
 
 }

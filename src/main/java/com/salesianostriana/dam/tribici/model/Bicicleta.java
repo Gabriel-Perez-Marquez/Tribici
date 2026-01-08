@@ -22,6 +22,7 @@ public class Bicicleta {
     private String modelo;
     private Estado estado;
     @ManyToOne
+    @JoinColumn(name = "estacion_id")
     private Estacion estacion;
     @OneToMany(mappedBy = "bicicleta")
     private List<Uso> usos = new ArrayList<>();
