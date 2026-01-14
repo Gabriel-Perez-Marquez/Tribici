@@ -24,7 +24,19 @@ public class Estacion {
     private int capacidad;
     @OneToMany(mappedBy = "estacion")
     private List<Bicicleta> bicicletas = new ArrayList<>();
-    @OneToMany(mappedBy = "estacion")
-    @Builder.Default
-    private List<Uso> usos = new ArrayList<>();
+
+
+
+    //Métodos de utilidad
+    public void addBicicleta(Bicicleta bicicleta){
+        bicicletas.add(bicicleta);
+        bicicleta.setEstacion(null);
+    }
+
+    public void removeBicicleta(Bicicleta bicicleta){
+        bicicletas.remove(bicicleta);
+        bicicleta.setEstacion(null);
+    }
+
+
 }

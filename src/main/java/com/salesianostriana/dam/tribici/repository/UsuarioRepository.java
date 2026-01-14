@@ -4,5 +4,9 @@ package com.salesianostriana.dam.tribici.repository;
 import com.salesianostriana.dam.tribici.model.Usuario;
 import org.springframework.data.jpa.repository.JpaRepository;
 
+import java.util.Optional;
+
 public interface UsuarioRepository extends JpaRepository<Usuario, Long> {
+
+    Optional<Usuario> findByNumTarjetaAndPin(String numTarjeta, String pin);
 }

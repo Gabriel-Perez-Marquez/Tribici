@@ -20,6 +20,7 @@ public class Bicicleta {
     private Long id;
     private String marca;
     private String modelo;
+    @Enumerated(EnumType.STRING)
     private Estado estado;
     @ManyToOne
     @JoinColumn(name = "estacion_id")
